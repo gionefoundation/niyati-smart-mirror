@@ -1,1 +1,87 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Niyati Smart Mirror</title><style>body{background:#000;color:#fff;font-family:monospace;margin:0;padding:40px;height:90vh;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}.time{font-size:70px;font-weight:bold}.brand{font-size:32px;letter-spacing:5px;color:#00ff66;text-align:center}</style></head><body><div style="display:flex;justify-content:space-between"><div><div class="time" id="c">00:00</div><div id="d" style="color:#888">...</div></div><div style="text-align:right"><div>NIYATI • NODE 01</div><div style="color:#00ff66">STATUS: ONLINE</div></div></div><div style="text-align:center"><div class="brand">NIYATI SMART MIRROR</div><div style="color:#ccc;margin-top:15px">"Village OS • Project 01"</div></div><div style="display:flex;justify-content:space-between;color:#555"><div>Parent: Village-OS / stewp-id-ai</div><div>Presence: Active</div></div><script>function u(){const n=new Date();document.getElementById("c").innerText=n.toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"});document.getElementById("d").innerText=n.toLocaleDateString("en-IN",{weekday:"long",month:"short",day:"numeric"})};setInterval(u,1000);u()</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Niyati Smart Mirror</title>
+  <style>
+    body {
+      background-color: #000000;
+      color: #ffffff;
+      font-family: 'Courier New', monospace;
+      margin: 0;
+      padding: 40px;
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+    }
+    .time {
+      font-size: 70px;
+      font-weight: bold;
+    }
+    .date {
+      font-size: 24px;
+      color: #888888;
+    }
+    .center-node {
+      text-align: center;
+    }
+    .brand {
+      font-size: 32px;
+      letter-spacing: 5px;
+      color: #00ff66;
+    }
+    .quote {
+      font-size: 20px;
+      color: #cccccc;
+      margin-top: 15px;
+    }
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      font-size: 16px;
+      color: #555555;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div>
+      <div class="time" id="clock">00:00</div>
+      <div class="date" id="date">Loading...</div>
+    </div>
+    <div style="text-align: right;">
+      <div style="font-size: 24px;">NIYATI • NODE 01</div>
+      <div style="color: #00ff66;">STATUS: ONLINE</div>
+    </div>
+  </div>
+
+  <div class="center-node">
+    <div class="brand">NIYATI SMART MIRROR</div>
+    <div class="quote">"Village OS • Project 01"
+    </div>
+  </div>
+
+  <div class="footer">
+    <div>Parent: Village-OS / stewp-id-ai</div>
+    <div>Presence: Active</div>
+  </div>
+
+<script>
+  function updateTime() {
+    const now = new Date();
+    document.getElementById('clock').innerText = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    document.getElementById('date').innerText = now.toLocaleDateString('en-IN', { weekday: 'long', month: 'short', day: 'numeric' });
+  }
+  setInterval(updateTime, 1000);
+  updateTime();
+</script>
+
+</body>
+</html>
